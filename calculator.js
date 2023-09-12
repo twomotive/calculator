@@ -59,7 +59,7 @@ operatorButtons.forEach((operatorButton) => {
       if (Number.isInteger(result)) {
         calscreen.textContent = result + " " + operator;
       } else {
-        calscreen.textContent = parseFloat(result).toFixed(2) + " " + operator;
+        calscreen.textContent = parseFloat(result).toFixed(3) + " " + operator;
       }
     }
   });
@@ -78,7 +78,7 @@ function firstCalculate() {
   if (Number.isInteger(result)) {
     resultShow.textContent = result;
   } else {
-    resultShow.textContent = parseFloat(result).toFixed(2);
+    resultShow.textContent = parseFloat(result).toFixed(3);
   }
 }
 
@@ -100,7 +100,7 @@ function nextCalculate() {
   if (Number.isInteger(result)) {
     resultShow.textContent = result;
   } else {
-    resultShow.textContent = parseFloat(result).toFixed(2);
+    resultShow.textContent = parseFloat(result).toFixed(3);
   }
 }
 
