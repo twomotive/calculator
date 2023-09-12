@@ -27,12 +27,27 @@ const calscreen = document.querySelector("#histext");
 numbers.forEach((number) => {
   number.addEventListener("click", () => {
     if (operatorCount === 0) {
+      if (num1.includes(".")) {
+        if (number.textContent === ".") {
+          return;
+        }
+      }
       num1 += number.textContent;
       resultShow.textContent = num1;
     } else if (operatorCount === 1) {
+      if (num2.includes(".")) {
+        if (number.textContent === ".") {
+          return;
+        }
+      }
       num2 += number.textContent;
       resultShow.textContent = num2;
     } else {
+      if (num2.includes(".")) {
+        if (number.textContent === ".") {
+          return;
+        }
+      }
       num2 += number.textContent;
       resultShow.textContent = num2;
     }
