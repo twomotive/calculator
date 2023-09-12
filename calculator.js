@@ -56,7 +56,11 @@ operatorButtons.forEach((operatorButton) => {
     if (operatorCount === 1) {
       calscreen.textContent = num1 + " " + operator;
     } else {
-      calscreen.textContent = parseFloat(result).toFixed(1) + " " + operator;
+      if (Number.isInteger(result)) {
+        calscreen.textContent = result + " " + operator;
+      } else {
+        calscreen.textContent = parseFloat(result).toFixed(2) + " " + operator;
+      }
     }
   });
 });
@@ -71,7 +75,11 @@ function firstCalculate() {
   } else if (operator === "/") {
     result = parseFloat(num1) / parseFloat(num2);
   }
-  resultShow.textContent = parseFloat(result).toFixed(1);
+  if (Number.isInteger(result)) {
+    resultShow.textContent = result;
+  } else {
+    resultShow.textContent = parseFloat(result).toFixed(2);
+  }
 }
 
 function nextCalculate() {
@@ -89,7 +97,11 @@ function nextCalculate() {
       result = parseFloat(result) / parseFloat(num2);
       break;
   }
-  resultShow.textContent = parseFloat(result).toFixed(1);
+  if (Number.isInteger(result)) {
+    resultShow.textContent = result;
+  } else {
+    resultShow.textContent = parseFloat(result).toFixed(2);
+  }
 }
 
 equal.addEventListener("click", () => {
